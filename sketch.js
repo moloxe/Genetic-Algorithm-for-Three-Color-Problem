@@ -18,7 +18,10 @@ function draw() {
   Individuos = Seleccion(Individuos)
   Individuos = Cruce(Individuos)
   Individuos = Mutacion(Individuos)
-  Mejor = MejorIndividuo(Individuos)
+  let nuevosIndividuos = Mutacion(Individuos)
+  Mejor = MejorIndividuo(nuevosIndividuos)
+  Individuos = Reemplazo(Individuos, nuevosIndividuos)
+  
   
   translate(width / 2, height / 2)
   
