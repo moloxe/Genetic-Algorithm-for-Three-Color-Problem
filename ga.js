@@ -88,3 +88,16 @@ function Mutacion(Individuos) {
   return Individuos
 }
 
+function Reemplazo(Individuos, nuevosIndividuos) {
+  let old = 0
+  for (let i of Individuos) {
+    old += Idoneidad(i)
+  }
+  let _new = 0
+  for (let i of nuevosIndividuos) {
+    old += Idoneidad(i)
+  }
+  if(old > _new)
+    return Individuos
+  return nuevosIndividuos
+}
