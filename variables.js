@@ -1,4 +1,7 @@
-var Individuos, Mejor = [], MejorPtj = 0, nIndividuos = 8
+var nIndividuos = 40,
+    gps = 3,
+    prob_m = 0.7
+
 var nodes = [
   {x: 100, y: 100},
   {x: -100, y: 100},
@@ -11,7 +14,6 @@ var nodes = [
   {x: -150, y: -130},
   {x: -200, y: 0},
 ]
-var n = nodes.length
 
 var edges = [
   [0, 1],

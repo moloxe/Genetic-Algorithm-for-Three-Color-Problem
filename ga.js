@@ -13,9 +13,9 @@ function Parejas(n) {
 
 function MejorIndividuo(Individuos) {
   for (let i of Individuos) {
-    if (MejorPtj < Idoneidad(i)) {
-      Mejor = i
-      MejorPtj = Idoneidad(i)
+    if (MejorPtj <= Idoneidad(i)) {
+      Mejor = i.slice()
+      MejorPtj = Idoneidad(Mejor)
     }
   }
   return Mejor
@@ -81,7 +81,7 @@ function Cruce(Individuos) {
 
 function Mutacion(Individuos) {
   for (let i = 0; i < Individuos.length; i++) {
-    if (random(1) > 0.5) {
+    if (prob_m < random(1)) {
       Individuos[i][Math.ceil(random(n))] = Math.ceil(random(3))
     }
   }
@@ -95,7 +95,7 @@ function Reemplazo(Individuos, nuevosIndividuos) {
   }
   let _new = 0
   for (let i of nuevosIndividuos) {
-    old += Idoneidad(i)
+    _new += Idoneidad(i)
   }
   if(old > _new)
     return Individuos
